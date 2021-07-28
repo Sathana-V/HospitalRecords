@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Report</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+   
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"/>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+
+
+
+<!-- Bootstrap Css -->
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <!-- Bootstrap Css -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -22,108 +32,8 @@
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
  <script src="script.js"></script>
+ <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    #mydatatable_filter .form-control {
-    background: url(../images/xxx.svg);    
-    background-repeat: no-repeat;
-    background-position: 0px 3px !important;
-}
-   .th_heading
-   {
-    background: #3498db;
-    color:white;
-    background: -webkit-linear-gradient(top, top, #3498db, #2980b9 100%);
-    background: -moz-linear-gradient(top, top, #3498db, #2980b9 100%);
-    background: -ms-linear-gradient(top, top, #3498db, #2980b9 100%);
-    background: -o-linear-gradient(top, top, #3498db, #2980b9 100%);
-    background: linear-gradient(to bottom, top, #3498db, #2980b9 100%);
-   }
-   table tr th{
-    color:white;
-    text-align:center;
-   }
-   table tr th .sorting{
-    color:white;
-   }
-    button.dt-button, div.dt-button, a.dt-button, input.dt-button,.Submit{
-    position: relative;
-    display: inline-block;
-    border:none;
-    box-sizing: border-box;
-    margin-right: .333em;
-    margin-bottom: .333em;
-    padding: .5em 1em;
-    font-family: Arial;
-    color: #ffffff;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-  
-    box-shadow: 2px 2px 3px #666666;
-    line-height: 1.6em;
-    white-space: nowrap;
-    overflow: hidden;
-    background: #3498db;
-    background: -webkit-linear-gradient(top, top, #3498db, #2980b9 100%);
-    background: -moz-linear-gradient(top, top, #3498db, #2980b9 100%);
-    background: -ms-linear-gradient(top, top, #3498db, #2980b9 100%);
-    background: -o-linear-gradient(top, top, #3498db, #2980b9 100%);
-    background: linear-gradient(to bottom, top, #3498db, #2980b9 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr=" #3498db", EndColorStr="#2980b9");
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    text-decoration: none;
-    outline: none;
-    text-overflow: ellipsis;
-}
-button.dt-button:active:not(.disabled),.Submit:active, button.dt-button.active:not(.disabled), div.dt-button:active:not(.disabled), div.dt-button.active:not(.disabled), a.dt-button:active:not(.disabled), a.dt-button.active:not(.disabled), input.dt-button:active:not(.disabled), input.dt-button.active:not(.disabled) {
-    background: -webkit-linear-gradient(top, #3cb0fd, #3498db 100%);
-    background: -moz-linear-gradient(top, #3cb0fd, #3498db 100%);
-    background: -ms-linear-gradient(top, #3cb0fd, #3498db 100%);
-    background: -o-linear-gradient(top, #3cb0fd, #3498db 100%);
-    background: linear-gradient(to bottom, top, #3cb0fd, #3498db 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr=" #3cb0fd", EndColorStr="#3498db");
-    box-shadow: 0 0px #666;
-  transform: translateY(4px);
-}
-.Submit:focus
-{
-    border:none;
-    outline:none;
-}
-button.dt-button:hover:not(.disabled),.Submit:hover, div.dt-button:hover:not(.disabled), a.dt-button:hover:not(.disabled), input.dt-button:hover:not(.disabled)   {
-    background: #3cb0fd;
-    color:white;
-    border:none;
-    background: -webkit-linear-gradient(top, #3cb0fd, #3498db 100%);
-    background: -moz-linear-gradient(top, #3cb0fd, #3498db 100%);
-    background: -ms-linear-gradient(top, #3cb0fd, #3498db 100%);
-    background: -o-linear-gradient(top, #3cb0fd, #3498db 100%);
-    background: linear-gradient(to bottom, top, #3cb0fd, #3498db 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr=" #3cb0fd", EndColorStr="#3498db");
-    }
-    /* button.dt-button, div.dt-button, a.dt-button, input.dt-button {
-        background: #3498db;
-
-  -webkit-border-radius: 9;
-  -moz-border-radius: 9;
-  border-radius: 4px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 16px;
-  text-align:center;
-  text-decoration: none;
-}
-button.dt-button, div.dt-button, a.dt-button, input.dt-button:hover{
-    background: #3cb0fd;
- 
-  text-decoration: none
-} */
-    </style>
-
 <body>
 <div class="container-fluid">
     <div class="form_container">
@@ -131,11 +41,12 @@ button.dt-button, div.dt-button, a.dt-button, input.dt-button:hover{
             <div class="row">
                     <div class="col-sm-2">
                         <label for="from_date">From Date</label>
-                        <input class="form-control" type="date" value="<?php echo isset($_POST['from_date']) ? $_POST['from_date']:'' ?>" id="from_date" name="from_date">
+            
+                        <input class="form-control" type="date" value="<?php echo isset($_POST['from_date']) ? $_POST['from_date']: date('Y-m-d');?>" id="from_date" name="from_date">
                     </div>
                     <div class="col-sm-2">
                         <label for="to_date">To Date</label>
-                        <input class="form-control" type="date" value="<?php echo isset($_POST['to_date']) ? $_POST['to_date']:'' ?>" id="to_date" name="to_date">
+                        <input class="form-control" type="date" value="<?php echo isset($_POST['to_date']) ? $_POST['to_date']: date('Y-m-d'); ?>" id="to_date" name="to_date">
                     </div>
                     <div class="col-sm-2">
                         <label for="sex">Sex</label>
@@ -187,11 +98,11 @@ button.dt-button, div.dt-button, a.dt-button, input.dt-button:hover{
             <div class="row">
                     <div class="col-sm-2">
                         <label for="from_age">From Age</label>
-                        <input class="form-control" value="<?php echo isset($_POST['from_age']) ? $_POST['from_age']:'' ?>" type="number" min="1" id="from_age" name="from_age">
+                        <input class="form-control" value="<?php echo isset($_POST['from_age']) ? $_POST['from_age']:'' ?>" type="number" min="1" max="120" id="from_age" name="from_age">
                     </div>
                     <div class="col-sm-2">
                         <label for="to_age">To Age</label>
-                        <input  class="form-control" value="<?php echo isset($_POST['to_age']) ? $_POST['to_age']:'' ?>" type="number" min="1" id="to_age" name="to_age">
+                        <input  class="form-control" value="<?php echo isset($_POST['to_age']) ? $_POST['to_age']:'' ?>" type="number" min="1" max="120" id="to_age" name="to_age">
                     </div>
                 
  
@@ -257,32 +168,32 @@ button.dt-button, div.dt-button, a.dt-button, input.dt-button:hover{
                     </div>
             </div>
         
-                           
+            <div class="row">
+                    <div class="col-sm-4">
+                        <label for="DSMIV">DSMIV</label>
+                        <input type="text" name="DSMIV" value="<?php echo isset($_POST['DSMIV']) ? $_POST['DSMIV']:'' ?>" id="DSMIV_search" width="100%" class="form-control">
+                    </div>
+                    <div class="col-sm-4">
+                    <label for="ICD10">ICD10</label>
+                        <input type="text" name="ICD10" value="<?php echo isset($_POST['ICD10']) ? $_POST['ICD10']:'' ?>" id="ICD10_search" width="100%" class="form-control">
+                    </div>
+                    <div class="col-sm-4">
+                    <label for="pros">DSMIV</label>
+                        <input type="text" name="Provisional" value="<?php echo isset($_POST['Provisional']) ? $_POST['Provisional']:'' ?>" id="Provisional" width="100%" class="form-control">
+                    </div>
+            </div>
                            
                                
                                 
         
-           
-                    <div class="Drug_class">
-                           <label for="Area" style="text-align:center;">Drug</label>
-                    
-                            <div style="width:100%;">
-                                <input type="text" value="<?php echo isset($_POST['Drug']) ? $_POST['Drug']:'' ?>" name="Drug" id="search" class="form-control" style="width:100%;" autocomplete="off">
-                            </div>
-                          
+            
                    
-                            <div class="show_drop">
-                                <div class="list-group" id="show-list">
-                                    <!-- Here autocomplete list will be display -->
-                                </div>
-                            </div>
-                            </div>
                              
                    
                                <div id="test" style="float:right;margin-top:2%;">
                                <button type="submit" class="Submit" id="submit" name="submit">Show</button>
                           
-                                </div>      
+                               </div>      
             
             
         </form>
@@ -298,21 +209,25 @@ button.dt-button, div.dt-button, a.dt-button, input.dt-button:hover{
                     <thead class="th_heading">
                         <tr>
                         
-                            <th colspan="11" style="text-align:center;">OUTPATIENT FOLLOWUP RECORDS</th>
+                            <th colspan="14" style="text-align:center;">Provisional</th>
                         
                         </tr>
                         <tr>
                                         <th>SI No</th>
-                                        <th>Id</th>
+                                        <th>Patient Id</th>
                                         <th>Name</th>
                                         <th>Age</th>
                                         <th>Sex</th>
                                         <th>Specification</th>
+                                        <th>Reg. Date</th>
+                                        <th>No Of Visit</th>
+                                        <th>last Visit</th>
+                                        <th>Days in Last Visit</th>
                                         <th>Address</th>
                                         <th>Phone</th>
-                                        <th>Visited Date</th>
-                                        <th>Registered Date</th>
-                                        <th>Ref Doctor Name</th>
+                                        <th>Consultant Name</th>
+                                        <th>Ref Doctor</th>
+                                       
                     </tr>
                     </thead>
                     <tbody>
@@ -330,47 +245,52 @@ button.dt-button, div.dt-button, a.dt-button, input.dt-button:hover{
                        
    
         
-    
+    <script type="text/javascript">
+  $(function() {
+     $( "#DSMIV_search" ).autocomplete({
+       source: 'action2.php',
+     });
+  });
+  $(function() {
+     $( "#ICD10_search" ).autocomplete({
+       source: 'action3.php',
+     });
+  });
+  $(function() {
+     $( "#Provisional" ).autocomplete({
+       source: 'provisional.php',
+     });
+  });
+</script>
 
  
 <script>
-   
+  
+ 
+
    var table =  $('#mydatatable').DataTable({
         //searching:false,
         // ordering:false,
         scrollX:true,
-        scrollY:500,
+        scrollY:1000,
         dom: 'lBfrtip',
         responsive: true,
         text:'OutPatientDetails',
         filename:'OutPatientDetails',
         buttons: [
-            { extend: "copy"},
-            { extend: "csv",title: 'Out Patient Details'},
             { extend: "excel",title: 'Out Patient Details'},
             { extend: "pdf",title: 'Out Patient Details'},
             { extend: "print",title: 'Out Patient Details', title: function(){
             var printTitle = 'OutPatient Details';
             return printTitle}}
         ],
-         lengthMenu:[[5,10,25,50,-1],[5,10,25,50,"All"]],
+         lengthMenu:[[10,50,100,500,-1],[10,50,100,500,"All"]],
          order:[[3,'desc']],
          pagingType:'full_numbers'
     });
     table.buttons().container().appendTo($('#test'));
-    // $('.mydatatable thead th').each(function(){
-    //     var title = $(this).text();
-    //     $(this).html('<input type="text" placeholder="Search '+title+'" />');
-    // });
-    // table.columns().every(function(){
-    //     var that =this;
-    //     $('input',this.header()).on('keyup change',function(){
-    //         if(that.search()!==this.value)
-    //         {
-    //               that.search(this.value).draw();
-    //         }
-    //     });
-    // });
+    $('#container').css( 'display', 'block' );
+ table.columns.adjust().draw();
 </script>
 
 </body>

@@ -1,0 +1,40 @@
+pid='000424'
+SELECT * FROM `patients` WHERE PATIENTID='000424'
+2021-02-02
+
+
+SELECT patients.DATE as lastvisit,patientinfo.name,patientinfo.patientregno,patientinfo.patientregno,count(patients.PATIENTID) as visit FROM `patients` inner join patientinfo on patientinfo.patientregno=patients.PATIENTID WHERE patients.PATIENT0ID='071676' group by patients.PATIENTID
+
++ Options
+lastvisit
+name
+patientregno
+patientregno
+visit
+2021-07-01
+MURUGAN C.
+071676
+071676
+5
+
+
+=>
+SELECT MAX(patients.DATE) as lastvisit,patientinfo.name,patientinfo.patientregno,patientinfo.patientregno,patientinfo.ts 
+as regDate,count(patients.PATIENTID) as visit FROM `patients` inner join patientinfo on patientinfo.patientregno=patients.PATIENTID
+ WHERE patients.REGNO like 'O%' and patients.PATIENTID='071676' group by patients.PATIENTID
+
++ Options
+lastvisit
+name
+patientregno
+patientregno
+regDate
+visit
+2021-07-08
+MURUGAN C.
+071676
+071676
+2021-07-01 00:00:00
+4
+
+SELECT MAX(patients.DATE) as lastvisit,patientinfo.name,patientinfo.patientregno,patientinfo.patientregno,patientinfo.ts as regDate,count(patients.PATIENTID) as visit FROM `patients` inner join patientinfo on patientinfo.patientregno=patients.PATIENTID WHERE patients.REGNO like 'O%' and patients.DATE BETWEEN '2021-07-01' and '2021-07-14' group by patients.PATIENTID ORDER BY `lastvisit` DESC
